@@ -47,3 +47,4 @@ group :development, :test do
 end
 
 gem "authentication-zero"
+gem "faker"
