@@ -1,0 +1,14 @@
+name: sjyframe_backend_development
+services:
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails db:prepare && bundle exec thrust bin/rails s"
+    environment:
+      RAILS_ENV: development
+    volumes:
+      - .:/rails
+    ports:
+      - "80:80"
+      - "443:443"
+    stdin_open: true
+    tty: true
